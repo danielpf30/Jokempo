@@ -1,10 +1,12 @@
 from database import db
 from datetime import datetime
 
+"""" O db.Model transforma o cod python em tabela no banco de dados """
 class Historico(db.Model):
     # Nome da tabela no banco
     __tablename__ = 'historico_jogos'
-
+    """" O create cria a tabela a partir dessa tabela """
+    """" Definindo as colunas da tabela"""
     id = db.Column(db.Integer, primary_key=True)
     escolha_usuario = db.Column(db.String(20), nullable=False)
     escolha_pc = db.Column(db.String(20), nullable=False)

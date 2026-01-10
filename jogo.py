@@ -42,7 +42,7 @@ class JokempoService:
             resultado = usuarioEnum.vence(jogadaPc)
 
             # Pega o valor do pc como 'tesoura' pra mostrar na tela
-            nome_pc = jogadaPcEnum.value
+            nome_pc = jogadaPc.value
 
             if resultado is None:
               return {
