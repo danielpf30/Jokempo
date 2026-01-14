@@ -1,0 +1,45 @@
+/* Configuração Geral */
+body {
+    background-color: #050a1f; /* Azul "Deep Space" */
+    color: white;
+    font-family: 'Press Start 2P', cursive; /* A fonte pixelada */
+    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+/* O Botão de Jogo (Círculo Vermelho) */
+.btn-jogada {
+    width: 120px;
+    height: 120px;
+    background-color: #b30000; /* Vermelho sangue */
+    border-radius: 50%; /* Faz ficar redondo */
+    border: 4px solid #ff4d4d; /* Borda vermelha clara */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem; /* Tamanho do emoji */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Animação suave */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra 3D */
+    user-select: none; /* Impede selecionar o emoji como texto */
+}
+
+/* Efeito ao passar o mouse */
+.btn-jogada:hover {
+    transform: scale(1.1); /* Cresce 10% */
+    background-color: #ff0000; /* Vermelho vivo */
+    box-shadow: 0 0 20px #ff0000; /* Brilho neon */
+}
+
+/* Efeito ao clicar */
+.btn-jogada:active {
+    transform: scale(0.95); /* Encolhe um pouquinho */
+}
+
+/* Ajustes finos para telas menores (Responsividade) */
+@media (max-width: 768px) {
+    .btn-jogada {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+    }
+}

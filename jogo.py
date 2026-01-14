@@ -1,7 +1,6 @@
 from enum import Enum
 import random
-from models import Historico  # Importamos a tabela
-from database import db
+
 
 class Jokempo(Enum):
     PEDRA = 'pedra'
@@ -47,25 +46,25 @@ class JokempoService:
             if resultado is None:
               return {
                   "mensagem": "Empate!",
-                  "code": "EMPATE", # amarelo
+                  "resultado": "EMPATE", # amarelo
                   "jogada_pc": nome_pc
               }
             
             elif resultado is True:
              return {
                  "mensagem": "Usuário venceu!",
-                 "code": "VITORIA", # verde    
+                 "resultado": "VITORIA", # verde    
                  "jogada_pc": nome_pc
              }
             
             else:
              return {
                  "mensagem": "PC venceu!",
-                 "code": "DERROTA", # vermelho
+                 "resultado": "DERROTA", # vermelho
                  "jogada_pc": nome_pc
              }
             
          except ValueError:
-             return {"mensagem": "Jogada Inválida!", "code": "ERRO", "escolha_pc": "?"}
+             return {"mensagem": "Jogada Inválida!", "resultado": "ERRO", "escolha_pc": "?"}
          except Exception as e:
-             return {"mensagem": "Erro interno", "code": "ERRO", "escolha_pc": "?"}
+             return {"mensagem": "Erro interno", "resultado": "ERRO", "escolha_pc": "?"}

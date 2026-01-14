@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena de Batalha</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container-fluid"> <div class="row mt-4 align-items-center">
+            
+            <div class="col-4 text-start ps-5">
+                <span id="nome-display" class="text-warning" style="cursor: pointer; display: none;">
+                    JOGADOR
+                </span>
+            </div>
+
+            <div class="col-4 text-center position-relative">
+                
+                <div id="container-input">
+                    <input type="text" id="input-nome" class="form-control text-center mx-auto" 
+                           placeholder="DIGITE SEU NICK" style="max-width: 250px; font-family: inherit;">
+                    
+                    <button class="btn btn-success mt-2 btn-sm" onclick="confirmarNome()">OK</button>
+                </div>
+
+                <div id="container-placar" style="display: none;">
+                    <div class="bg-white text-dark rounded p-2 d-inline-block fs-3 border border-dark border-3">
+                        <span id="placar-user">0</span> X <span id="placar-pc">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-4 text-end pe-5">
+                <a href="/historico" class="btn btn-light border-dark btn-sm">
+                    HISTÓRICO
+                </a>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h3 id="msg-resultado" class="text-warning" style="min-height: 40px;">...</h3>
+            </div>
+        </div>
+
+
+        <div id="mesa-jogo" class="mt-5 text-center" style="opacity: 0.3; pointer-events: none;">
+            
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto">
+                    <div class="btn-jogada" onclick="jogar('papel')">📄</div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center gap-5">
+                <div class="col-auto">
+                    <div class="btn-jogada" onclick="jogar('tesoura')">✂️</div>
+                </div>
+                <div class="col-auto">
+                    <div class="btn-jogada" onclick="jogar('pedra')">🗿</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
