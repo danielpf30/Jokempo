@@ -3,7 +3,6 @@
 Aplicação web do clássico **Pedra, Papel e Tesoura** com histórico de partidas.
 
 ![Tela do Jogo](static/image.png)
-*(Substitua "caminho-da-sua-imagem.png" pelo nome real do arquivo)*
 
 ## 🛠️ Tecnologias Utilizadas
 
