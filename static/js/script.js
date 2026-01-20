@@ -70,11 +70,11 @@ function atualizarPlacar(dados) {
     
     // Define a mensagem e a cor
     if (dados.resultado === 'VITORIA') {
-        txtResultado.innerText = `BOA, ${nomeJogador}! VOCÊ GANHOU!`;
+        txtResultado.innerText = `AEE, VOCÊ GANHOU!`;
         txtResultado.className = 'text-success fw-bold'; // Classe verde do Bootstrap
         pontosUser++;
     } else if (dados.resultado === 'DERROTA') {
-        txtResultado.innerText = "IHH... O PYTHON GANHOU!";
+        txtResultado.innerText = "IHH...VOCÊ PERDEU!";
         txtResultado.className = 'text-danger fw-bold'; // Classe vermelha do Bootstrap
         pontosPC++;
     } else {
@@ -83,6 +83,8 @@ function atualizarPlacar(dados) {
     }
 
     // Atualiza os números
+    document.getElementById('nome-user').innerText = nomeJogador;
+    document.getElementById('nome-pc').innerText = 'Boot';
     document.getElementById('placar-user').innerText = pontosUser;
     document.getElementById('placar-pc').innerText = pontosPC;
 }
